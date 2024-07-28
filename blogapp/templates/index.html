@@ -1,0 +1,28 @@
+{%extends "base.html" %}
+
+{%block title %}
+    home
+{%endblock title %}
+{%block content %}
+<div class="container mt-5 mb-5 ml-5">
+    <h1 class="mb-3">Read the best blogs in town</h1>
+    <div class="row mb-3 ">
+        {%for blog in blogs%}
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="/media/{{ blog.image }}" name="image" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{blog.title}}</h5>
+                  <p class="card-text">{{blog.description  | truncatechars:40}}</p>
+                  <a href="/blog/{{blog.id}}/" class="btn btn-primary">Read more</a>
+                  <a href="/delete_blog/{{blog.id}}/" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+
+{%endblock content %}

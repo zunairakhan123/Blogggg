@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{% block title %}
+Detail
+{% endblock title %}
+{%block content %}
+<div class="container shadow mt-4 ">
+
+  <div class="card text-center" style="width: 40rem; ">
+    <img src="/media/{{ blog.image }}" name="image"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.title}}</h5>
+      <p class="card-title">Posted on {{blog.created_at}} by {{blog.author}}</p>
+      <p class="card-text">{{blog.description}}</p>
+        <div class="col-8 mb-3">
+          <a href="{% url 'index' %}" class="btn ml-20">
+            <button class="btn btn-primary " type="button">Go back</button>
+          </a>
+          <a href="/delete_blog/{{blog.id}}/" class="btn" name="delete" >
+            <button class="btn bg-danger " type="button">Delete</button>
+          </a>
+          <a href="/update_blog/{{blog.id}}/" class="btn" name="update">
+            <button class="btn btn-primary " type="button">Update</button>
+          </a>
+        </div>
+      
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}

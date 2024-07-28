@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% block title %}
+    Categories
+{% endblock title %}
+
+{% block content %}
+<!-- category.html -->
+<h1>Categories Lists</h1>
+<ul class="list-group">
+  {% for categories in categories %}
+  
+  <div class="col-lg-4 mt-4 text-dark">
+    <div class="card shadow " style="width: 18rem;">
+    <li class="list-group-item list-group-item-dark shadow"><a href="/blog_list/{{categories.id}}"><p class="text-dark text-capitalize fw-bold">{{ categories.name }}</p></a></li>
+  </div>
+</div>
+  {% endfor %}
+</ul>
+
+
+{% endblock content %}
